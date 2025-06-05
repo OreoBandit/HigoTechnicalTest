@@ -3,11 +3,11 @@ import {createContext, useContext, useState} from 'react';
 const rootCtx = createContext(null);
 
 export const RootContextProvider = ({children}) => {
-  const [test, setTest] = useState(0);
+  const [user, setUser] = useState('');
 
   const ctx = {
-    test,
-    setTest,
+    user,
+    setUser,
   };
   return <rootCtx.Provider value={ctx}>{children}</rootCtx.Provider>;
 };

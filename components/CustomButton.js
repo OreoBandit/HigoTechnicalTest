@@ -21,9 +21,6 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
   btnContainer: {
-    // backgroundColor: COLORS.white,
-    // width: '70%',
-    // height: 55,
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
