@@ -5,21 +5,27 @@ import {useRootContext} from '../context/rootContext';
 export const IntroViewModel = () => {
   const {user, setUser} = useRootContext();
   const [name, setName] = useState('');
+  const [disableButton, setDisableButton] = useState(true);
   const nav = useNavigation();
+
+  useEffect(() => {
+    if (name) {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  }, [name]);
 
   const onSubmit = () => {
     setUser(name);
-    nav.navigate('homepage');
+    nav.navigate('tab');
   };
-
-  useEffect(() => {
-    console.log('name', name);
-  }, [name]);
 
   const introVm = {
     name,
     setName,
     onSubmit,
+    disableButton,
   };
   return introVm;
 };

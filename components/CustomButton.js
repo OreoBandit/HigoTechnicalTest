@@ -4,17 +4,31 @@ import {COLORS} from '../constants/colors';
 
 const CustomButton = props => {
   const {
-    backgroundColor = 'white',
     text = 'default',
     onPress = () => {},
     height = 55,
     width = '40%',
+    disabled = false,
   } = props;
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={onPress}
-      style={[styles.btnContainer, {backgroundColor, height, width}]}>
-      <Text style={styles.btnText}>{text}</Text>
+      style={[
+        styles.btnContainer,
+        {
+          height,
+          width,
+          backgroundColor: disabled ? COLORS.white : COLORS.white,
+        },
+      ]}>
+      <Text
+        style={[
+          styles.btnText,
+          {color: disabled ? COLORS.disabled : COLORS.brandOrange},
+        ]}>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -26,7 +40,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnText: {
-    color: COLORS.brandOrange,
     fontSize: 24,
     fontWeight: 'bold',
   },

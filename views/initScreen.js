@@ -5,7 +5,7 @@ import {COLORS} from '../constants/colors';
 import CustomButton from '../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
 
-const initScreen = () => {
+const InitScreen = () => {
   const nav = useNavigation();
   return (
     <View style={styles.outerContainer}>
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default initScreen;
+export default InitScreen;
